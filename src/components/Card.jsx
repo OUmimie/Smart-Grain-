@@ -17,20 +17,20 @@ export default function Card({
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`glass rounded-2xl p-6 lg:p-8 shadow-lg shadow-industrial-500/5 hover:shadow-xl hover:shadow-industrial-500/10 transition-shadow duration-300 ${className}`}
+      className={`glass rounded-2xl p-6 lg:p-8 shadow-lg shadow-blue-900/20 hover:shadow-xl hover:shadow-sky-500/15 transition-shadow duration-300 ${className}`}
     >
       {Icon && (
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-industrial-500 to-industrial-600 flex items-center justify-center mb-5">
-          <Icon className="w-6 h-6 text-sand-100" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-sky-400 flex items-center justify-center mb-5">
+          <Icon className="w-6 h-6 text-white" />
         </div>
       )}
       {title && (
-        <h3 className="font-display text-xl font-semibold text-industrial-700 mb-3">
+        <h3 className="font-display text-xl font-semibold text-white mb-3">
           {title}
         </h3>
       )}
       {description && (
-        <p className="text-industrial-400 leading-relaxed">{description}</p>
+        <p className="text-blue-200/80 leading-relaxed">{description}</p>
       )}
       {children}
     </motion.div>

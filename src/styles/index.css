@@ -1,104 +1,196 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sand-50: #faf8f5;
-  --color-sand-100: #f5f0e8;
-  --color-sand-200: #e8dcc8;
-  --color-sand-300: #d4c4a8;
-  --color-sand-400: #b8a080;
-  --color-industrial-50: #f7f8f9;
-  --color-industrial-100: #e8eaed;
-  --color-industrial-200: #c5cad1;
-  --color-industrial-300: #8b95a5;
-  --color-industrial-400: #5b6678;
-  --color-industrial-500: #3d4654;
-  --color-industrial-600: #2a3140;
-  --color-industrial-700: #1a1f2e;
-  --color-industrial-800: #12151f;
-  --color-glass-blue: #7eb8da;
-  --color-glass-blue-light: rgba(126, 184, 218, 0.15);
-  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* === Couleurs du logo SmartGrain === */
+  /* Bleu royal (couleur dominante du logo) */
+  --color-brand-50:  #eef3fd;
+  --color-brand-100: #d5e2fb;
+  --color-brand-200: #adc4f7;
+  --color-brand-300: #7aa2f0;
+  --color-brand-400: #4d81e8;
+  --color-brand-500: #2255cc;  /* bleu royal principal */
+  --color-brand-600: #1a3fa3;  /* bleu profond */
+  --color-brand-700: #142e7a;
+  --color-brand-800: #0e1f52;
+  --color-brand-900: #081229;
+
+  /* Bleu ciel (seconde couleur du logo) */
+  --color-sky-brand:       #5bb8f5;
+  --color-sky-brand-light: rgba(91, 184, 245, 0.18);
+  --color-sky-brand-glow:  rgba(91, 184, 245, 0.35);
+
+  /* Or / Soleil (accent lumineux du logo) */
+  --color-gold:       #f5a623;
+  --color-gold-light: rgba(245, 166, 35, 0.20);
+
+  /* Blanc pur */
+  --color-white-pure: #ffffff;
+
+  /* Neutres sombres pour le texte */
+  --color-dark-900: #060d1f;
+  --color-dark-800: #0d1a35;
+  --color-dark-700: #162040;
+  --color-dark-600: #253060;
+
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* ──────────────────────────────────────────────
+   BASE
+────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-sand-50);
-  color: var(--color-industrial-600);
+  /* Fond principal inspiré du bleu royal du logo */
+  background: linear-gradient(
+    160deg,
+    #060d1f 0%,
+    #0e1f52 30%,
+    #142e7a 60%,
+    #0d1a35 100%
+  );
+  background-attachment: fixed;
+  color: #dce8ff;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  color: #ffffff;
 }
 
+/* ──────────────────────────────────────────────
+   GLASS CARDS (teinte bleu logo)
+────────────────────────────────────────────── */
 .glass {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(91, 184, 245, 0.25);
+  border-radius: 16px;
 }
 
 .glass-dark {
-  background: rgba(26, 31, 46, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(14, 31, 82, 0.70);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(91, 184, 245, 0.15);
+  border-radius: 16px;
 }
 
+/* ──────────────────────────────────────────────
+   GRADIENTS TEXTE
+────────────────────────────────────────────── */
 .text-gradient {
-  background: linear-gradient(135deg, #3d4654 0%, #5b7c99 50%, #7eb8da 100%);
+  background: linear-gradient(135deg, #5bb8f5 0%, #ffffff 50%, #f5a623 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #2255cc 0%, #5bb8f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ──────────────────────────────────────────────
+   GLOW EFFECTS (aura bleu logo)
+────────────────────────────────────────────── */
+.glow-blue {
+  box-shadow: 0 0 30px rgba(91, 184, 245, 0.30),
+              0 0 80px rgba(34, 85, 204, 0.20);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.40),
+              0 0 60px rgba(245, 166, 35, 0.15);
+}
+
+/* ──────────────────────────────────────────────
+   SECTIONS – alternance de fonds subtile
+────────────────────────────────────────────── */
+.section-alt {
+  background: rgba(14, 31, 82, 0.55);
+  backdrop-filter: blur(4px);
 }
 
 .section-padding {
   @apply px-4 sm:px-6 lg:px-8 py-20 lg:py-28;
 }
 
+/* ──────────────────────────────────────────────
+   BOUTONS
+────────────────────────────────────────────── */
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-white transition-all duration-300;
-  background: linear-gradient(135deg, #5b6678 0%, #3d4654 100%);
-  box-shadow: 0 4px 20px rgba(61, 70, 84, 0.25);
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white transition-all duration-300;
+  background: linear-gradient(135deg, #2255cc 0%, #5bb8f5 100%);
+  box-shadow: 0 4px 24px rgba(34, 85, 204, 0.45);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(61, 70, 84, 0.35);
+  box-shadow: 0 8px 36px rgba(91, 184, 245, 0.55);
+  filter: brightness(1.1);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300;
-  background: rgba(255, 255, 255, 0.7);
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300;
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  color: #3d4654;
+  border: 1px solid rgba(91, 184, 245, 0.40);
+  color: #5bb8f5;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(91, 184, 245, 0.18);
+  border-color: rgba(91, 184, 245, 0.70);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
+/* ──────────────────────────────────────────────
+   SCROLLBAR
+────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f0e8;
+  background: #0e1f52;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b95a5;
+  background: linear-gradient(180deg, #2255cc, #5bb8f5);
   border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5bb8f5, #f5a623);
+}
+
+/* ──────────────────────────────────────────────
+   PARTICLES / ÉTOILES DE FOND (effet subtil)
+────────────────────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(91,184,245,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 15%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 60%, rgba(91,184,245,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 75%, rgba(245,166,35,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 80%, rgba(255,255,255,0.30) 0%, transparent 100%),
+    radial-gradient(2px 2px at 55% 40%, rgba(91,184,245,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 50%, rgba(255,255,255,0.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 5%  90%, rgba(245,166,35,0.45) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
 }

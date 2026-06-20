@@ -4,6 +4,7 @@ import { FiSend, FiUser, FiMail, FiMessageSquare, FiTag } from "react-icons/fi";
 import toast from "react-hot-toast";
 import SectionTitle from "./SectionTitle";
 import { useInView } from "../hooks/useInView";
+import { company } from "../data/company";
 
 const initialForm = { name: "", email: "", subject: "", message: "" };
 
@@ -51,9 +52,10 @@ export default function ContactForm() {
     toast.success("Message envoyé avec succès ! Nous vous répondrons sous 48h.", {
       duration: 4000,
       style: {
-        background: "#3d4654",
-        color: "#f5f0e8",
+        background: "#0e1f52",
+        color: "#dce8ff",
         borderRadius: "12px",
+        border: "1px solid rgba(91,184,245,0.3)",
       },
     });
   };
@@ -65,7 +67,7 @@ export default function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-sand-100 to-industrial-50">
+    <section id="contact" className="section-padding" style={{background: 'rgba(14,31,82,0.55)'}}>
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           tag="Contact"
@@ -82,34 +84,61 @@ export default function ContactForm() {
         >
           <div className="lg:col-span-2 space-y-6">
             <div className="glass rounded-2xl p-6">
-              <h3 className="font-display font-semibold text-industrial-700 mb-4">
+              <h3 className="font-display font-semibold text-white mb-4">
                 Coordonnées
               </h3>
-              <ul className="space-y-3 text-industrial-400 text-sm">
+              <ul className="space-y-3 text-blue-200/80 text-sm">
                 <li>
-                  <strong className="text-industrial-600">Adresse :</strong>
+                  <strong className="text-sky-300">Adresse :</strong>
                   <br />
-                  Zone Industrielle Nord, Lot 42
+                  {company.address.line1}
                   <br />
-                  75000 Paris, France
+                  {company.address.line2}
                 </li>
                 <li>
-                  <strong className="text-industrial-600">Téléphone :</strong>
+                  <strong className="text-sky-300">Téléphone :</strong>
                   <br />
-                  +33 1 23 45 67 89
+                  {company.phones.map((phone, i) => (
+                    <span key={phone.href}>
+                      {i > 0 && " / "}
+                      <a
+                        href={phone.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {phone.label}
+                      </a>
+                    </span>
+                  ))}
                 </li>
                 <li>
-                  <strong className="text-industrial-600">Email :</strong>
+                  <strong className="text-sky-300">Email :</strong>
                   <br />
-                  contact@smartgrain.fr
+                  <a
+                    href={`mailto:${company.email}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {company.email}
+                  </a>
+                </li>
+                <li>
+                  <strong className="text-sky-300">Site web :</strong>
+                  <br />
+                  <a
+                    href={company.website.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    {company.website.label}
+                  </a>
                 </li>
               </ul>
             </div>
             <div className="glass rounded-2xl p-6">
-              <h3 className="font-display font-semibold text-industrial-700 mb-2">
+              <h3 className="font-display font-semibold text-white mb-2">
                 Horaires
               </h3>
-              <p className="text-industrial-400 text-sm">
+              <p className="text-blue-200/75 text-sm">
                 Lun — Ven : 8h00 — 18h00
                 <br />
                 Sam : 9h00 — 12h00 (sur rendez-vous)
@@ -132,12 +161,12 @@ export default function ContactForm() {
                   >
                     <label
                       htmlFor={field.name}
-                      className="block text-sm font-medium text-industrial-600 mb-2"
+                      className="block text-sm font-medium text-blue-200 mb-2"
                     >
                       {field.label}
                     </label>
                     <div className="relative">
-                      <Icon className="absolute left-4 top-1/2 -translate-y-1/2 text-industrial-300 w-4 h-4" />
+                      <Icon className="absolute left-4 top-1/2 -translate-y-1/2 text-sky-400/70 w-4 h-4" />
                       <input
                         id={field.name}
                         name={field.name}
@@ -145,10 +174,10 @@ export default function ContactForm() {
                         value={form[field.name]}
                         onChange={handleChange}
                         placeholder={field.placeholder}
-                        className={`w-full pl-11 pr-4 py-3 rounded-xl border bg-white/60 text-industrial-700 placeholder-industrial-300 focus:outline-none focus:ring-2 focus:ring-glass-blue/40 transition-all ${
+                        className={`w-full pl-11 pr-4 py-3 rounded-xl border bg-white/5 text-white placeholder-blue-300/40 focus:outline-none focus:ring-2 focus:ring-sky-400/50 transition-all ${
                           errors[field.name]
                             ? "border-red-400"
-                            : "border-industrial-100"
+                            : "border-sky-500/25"
                         }`}
                         aria-invalid={!!errors[field.name]}
                         aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
@@ -165,11 +194,11 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-industrial-600 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-blue-200 mb-2">
                 Message
               </label>
               <div className="relative">
-                <FiMessageSquare className="absolute left-4 top-4 text-industrial-300 w-4 h-4" />
+                <FiMessageSquare className="absolute left-4 top-4 text-sky-400/70 w-4 h-4" />
                 <textarea
                   id="message"
                   name="message"
@@ -177,8 +206,8 @@ export default function ContactForm() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Décrivez votre demande..."
-                  className={`w-full pl-11 pr-4 py-3 rounded-xl border bg-white/60 text-industrial-700 placeholder-industrial-300 focus:outline-none focus:ring-2 focus:ring-glass-blue/40 resize-none transition-all ${
-                    errors.message ? "border-red-400" : "border-industrial-100"
+                  className={`w-full pl-11 pr-4 py-3 rounded-xl border bg-white/5 text-white placeholder-blue-300/40 focus:outline-none focus:ring-2 focus:ring-sky-400/50 resize-none transition-all ${
+                    errors.message ? "border-red-400" : "border-sky-500/25"
                   }`}
                   aria-invalid={!!errors.message}
                 />

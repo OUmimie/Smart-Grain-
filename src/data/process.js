@@ -41,4 +41,12 @@ export const processSteps = [
     image: images.process[4],
     alt: "Produits finis en verre",
   },
+  {
+    id: 6,
+    title: "Verre intelligent",
+    description:
+      "Application d’un revêtement photocatalytique au dioxyde de titane (TiO₂) sur la surface du verre. Ce traitement confère des propriétés autonettoyantes, antibactériennes et de purification de l’air, pour un verre haute performance adapté aux environnements exigeants.",
+    image: images.process[5],
+    alt: "Verre intelligent au TiO₂",
+  },
 ];

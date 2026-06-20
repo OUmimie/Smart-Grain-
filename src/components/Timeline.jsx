@@ -25,29 +25,29 @@ function TimelineStep({ step, index }) {
             className="w-full h-64 lg:h-72 object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-industrial-700/40 to-transparent" />
-          <span className="absolute top-4 left-4 w-12 h-12 rounded-xl glass flex items-center justify-center font-display font-bold text-industrial-700 text-lg">
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
+          <span className="absolute top-4 left-4 w-12 h-12 rounded-xl glass flex items-center justify-center font-display font-bold text-white text-lg">
             {String(step.id).padStart(2, "0")}
           </span>
         </div>
       </div>
 
       <div className="hidden lg:flex flex-col items-center">
-        <div className="w-4 h-4 rounded-full bg-glass-blue ring-4 ring-glass-blue-light" />
+        <div className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/25" />
         {index < processSteps.length - 1 && (
-          <div className="w-0.5 h-32 bg-gradient-to-b from-glass-blue to-sand-300" />
+          <div className="w-0.5 h-32 bg-gradient-to-b from-sky-400 to-blue-700" />
         )}
       </div>
 
       <div className="flex-1 w-full">
         <div className="glass rounded-2xl p-6 lg:p-8">
-          <span className="text-glass-blue font-semibold text-sm">
+          <span className="text-sky-400 font-semibold text-sm">
             Étape {step.id}
           </span>
-          <h3 className="font-display text-2xl font-bold text-industrial-700 mt-2 mb-4">
+          <h3 className="font-display text-2xl font-bold text-white mt-2 mb-4">
             {step.title}
           </h3>
-          <p className="text-industrial-400 leading-relaxed">{step.description}</p>
+          <p className="text-blue-200/80 leading-relaxed">{step.description}</p>
         </div>
       </div>
     </motion.div>
@@ -56,12 +56,12 @@ function TimelineStep({ step, index }) {
 
 export default function Timeline() {
   return (
-    <section id="processus" className="section-padding bg-gradient-to-b from-sand-100 to-sand-50">
+    <section id="processus" className="section-padding" style={{background: 'rgba(6,13,31,0.6)'}}>
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           tag="Processus"
           title="Processus de Transformation"
-          subtitle="Cinq étapes clés transforment le sable brut en verre premium, avec un contrôle qualité rigoureux à chaque phase."
+          subtitle="Six étapes clés transforment le sable brut en verre intelligent premium, avec un contrôle qualité rigoureux à chaque phase."
         />
 
         <div className="space-y-16 lg:space-y-24">

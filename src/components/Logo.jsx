@@ -1,6 +1,8 @@
 import { images } from "../data/images";
 
-export default function Logo({ className = "w-10 h-10", alt = "SmartGrain — Transformation du Sable en Verre" }) {
+import { company } from "../data/company";
+
+export default function Logo({ className = "w-10 h-10", alt = `${company.name} — ${company.slogan}` }) {
   return (
     <img
       src={images.logo}

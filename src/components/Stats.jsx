@@ -34,17 +34,17 @@ export default function Stats() {
                 transition={{ delay: index * 0.1 }}
                 className="glass rounded-2xl p-5 lg:p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-10 h-10 mx-auto mb-3 rounded-xl bg-glass-blue-light flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-industrial-500" />
+                <div className="w-10 h-10 mx-auto mb-3 rounded-xl bg-sky-500/15 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-sky-300" />
                 </div>
-                <p className="font-display text-2xl lg:text-3xl font-bold text-industrial-700">
+                <p className="font-display text-2xl lg:text-3xl font-bold text-white">
                   <AnimatedCounter
                     value={stat.value}
                     suffix={stat.suffix}
                     inView={isInView}
                   />
                 </p>
-                <p className="text-sm text-industrial-400 mt-1">{stat.label}</p>
+                <p className="text-sm text-blue-200/75 mt-1">{stat.label}</p>
               </motion.div>
             );
           })}

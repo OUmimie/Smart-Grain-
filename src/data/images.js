@@ -7,11 +7,12 @@ export const images = {
   about: "/img.jpeg",
   parallax: "/img3.jpeg",
   process: [
-    "/img.jpeg",
-    "/img2.jpeg",
-    "/img3.jpeg",
-    "/img4.jpeg",
-    "/img5.jpeg",
+    "/oumie/Extraction du sable.jpeg",
+    "/oumie/Tri Purification.jpeg",
+    "/oumie/Fusion à Haute temperature.jpeg",
+    "/oumie/Refroidissement .jpeg",
+    "/oumie/Fabrication de produit.jpeg",
+    "/oumie/Verre intelligent.jpeg",
   ],
   gallery: [
     "/img.jpeg",

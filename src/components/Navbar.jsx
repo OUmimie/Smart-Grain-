@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { navLinks } from "../data/navigation";
+import { company } from "../data/company";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import Logo from "./Logo";
 
@@ -42,7 +43,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, delay: 2 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass shadow-lg shadow-industrial-500/5 py-3"
+          ? "glass shadow-lg shadow-brand-500/10 py-3"
           : isOnHero
             ? "bg-black/25 backdrop-blur-sm py-5"
             : "bg-transparent py-5"
@@ -61,17 +62,17 @@ export default function Navbar() {
           <div className="hidden sm:block">
             <span
               className={`font-display font-semibold text-sm leading-tight block transition-colors ${
-                isOnHero ? "text-white" : "text-industrial-700"
+                isOnHero ? "text-white" : "text-white"
               }`}
             >
-              SmartGrain
+              {company.shortName}
             </span>
             <span
               className={`text-xs transition-colors ${
-                isOnHero ? "text-sand-200/80" : "text-industrial-400"
+                isOnHero ? "text-sky-200/80" : "text-blue-200/70"
               }`}
             >
-              Sable → Verre
+              {company.slogan}
             </span>
           </div>
         </a>
@@ -89,10 +90,10 @@ export default function Navbar() {
                   activeSection === link.href.replace("#", "")
                     ? isOnHero
                       ? "bg-white/20 text-white ring-1 ring-white/30"
-                      : "bg-industrial-600 text-white"
+                      : "bg-blue-600 text-white"
                     : isOnHero
                       ? "text-white/90 hover:text-white hover:bg-white/10"
-                      : "text-industrial-500 hover:text-industrial-700 hover:bg-white/50"
+                      : "text-blue-100 hover:text-white hover:bg-blue-500/25"
                 }`}
               >
                 {link.label}
@@ -118,7 +119,7 @@ export default function Navbar() {
           className={`lg:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
             isOnHero
               ? "bg-white/10 text-white hover:bg-white/20"
-              : "glass text-industrial-600"
+              : "glass text-white"
           }`}
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
@@ -143,7 +144,11 @@ export default function Navbar() {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className="block px-4 py-3 rounded-xl text-industrial-600 font-medium hover:bg-white/60 transition-colors"
+                    className={`block px-4 py-3 rounded-xl font-medium transition-colors ${
+                        activeSection === link.href.replace("#", "")
+                          ? "bg-blue-600 text-white"
+                          : "text-blue-100 hover:bg-blue-500/25"
+                      }`}
                   >
                     {link.label}
                   </a>

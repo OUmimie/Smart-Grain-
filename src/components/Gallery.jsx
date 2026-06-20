@@ -14,7 +14,7 @@ export default function Gallery() {
       : galleryItems.filter((item) => item.category === filter);
 
   return (
-    <section id="galerie" className="section-padding bg-industrial-50">
+    <section id="galerie" className="section-padding" style={{background: 'rgba(6,13,31,0.65)'}}>
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           tag="Galerie"
@@ -30,8 +30,8 @@ export default function Gallery() {
               onClick={() => setFilter(cat.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 filter === cat.id
-                  ? "bg-industrial-600 text-white shadow-md"
-                  : "glass text-industrial-500 hover:bg-white/80"
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "glass text-blue-200 hover:bg-blue-500/20"
               }`}
             >
               {cat.label}
@@ -65,13 +65,13 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-industrial-700/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <p className="text-white font-medium">{item.title}</p>
-                  <p className="text-sand-200/70 text-sm capitalize">{item.category}</p>
+                  <p className="text-sky-200/70 text-sm capitalize">{item.category}</p>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   {item.type === "video" ? (
-                    <FiPlay className="text-industrial-600" />
+                    <FiPlay className="text-sky-300" />
                   ) : (
-                    <FiZoomIn className="text-industrial-600" />
+                    <FiZoomIn className="text-sky-300" />
                   )}
                 </div>
               </motion.div>
@@ -83,7 +83,7 @@ export default function Gallery() {
       <AnimatePresence>
         {lightbox && (
           <motion.div
-            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-industrial-800/90 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-blue-950/92 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -99,7 +99,7 @@ export default function Gallery() {
               <button
                 type="button"
                 onClick={() => setLightbox(null)}
-                className="absolute -top-12 right-0 text-white hover:text-sand-200 transition-colors"
+                className="absolute -top-12 right-0 text-white hover:text-sky-300 transition-colors"
                 aria-label="Fermer"
               >
                 <FiX size={28} />

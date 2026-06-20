@@ -16,8 +16,8 @@ export default function SectionTitle({ tag, title, subtitle, light = false }) {
         <span
           className={`inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-4 py-1.5 rounded-full ${
             light
-              ? "glass-dark text-sand-200"
-              : "bg-glass-blue-light text-industrial-500"
+              ? "glass-dark text-blue-200"
+              : "bg-sky-500/15 text-sky-300 border border-sky-500/30"
           }`}
         >
           {tag}
@@ -25,7 +25,7 @@ export default function SectionTitle({ tag, title, subtitle, light = false }) {
       )}
       <h2
         className={`font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
-          light ? "text-white" : "text-industrial-700"
+          light ? "text-white" : "text-white"
         }`}
       >
         {title}
@@ -33,7 +33,7 @@ export default function SectionTitle({ tag, title, subtitle, light = false }) {
       {subtitle && (
         <p
           className={`text-lg leading-relaxed ${
-            light ? "text-sand-200/80" : "text-industrial-400"
+            light ? "text-blue-200/80" : "text-blue-200/75"
           }`}
         >
           {subtitle}

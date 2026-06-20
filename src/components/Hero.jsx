@@ -52,7 +52,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.2 }}
         >
-          <span className="inline-block glass-dark text-sand-100 text-xs sm:text-sm font-medium tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+          <span className="inline-block glass-dark text-blue-100 text-xs sm:text-sm font-medium tracking-widest uppercase px-4 py-2 rounded-full mb-6">
             Projet industriel innovant
           </span>
         </motion.div>
@@ -65,13 +65,13 @@ export default function Hero() {
         >
           Transformation du
           <br />
-          <span className="bg-gradient-to-r from-sand-200 via-glass-blue to-sand-100 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-300 via-sky-300 to-yellow-200 bg-clip-text text-transparent">
             Sable en Verre
           </span>
         </motion.h1>
 
         <motion.p
-          className="max-w-2xl mx-auto text-sand-100/95 text-lg sm:text-xl leading-relaxed mb-10 drop-shadow-md"
+          className="max-w-2xl mx-auto text-blue-100/90 text-lg sm:text-xl leading-relaxed mb-10 drop-shadow-md"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
@@ -104,7 +104,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollTo("#apropos")}
-            className="glass-dark rounded-full p-3 text-sand-100 hover:bg-white/10 transition-colors animate-bounce"
+            className="glass-dark rounded-full p-3 text-blue-200 hover:bg-white/10 transition-colors animate-bounce"
             aria-label="Défiler vers le bas"
           >
             <FiArrowDown size={24} />
@@ -113,18 +113,18 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-8 right-8 z-10 hidden md:flex items-center gap-3 glass-dark rounded-2xl px-4 py-3 cursor-pointer group"
+        className="absolute bottom-24 right-8 z-10 hidden md:flex items-center gap-3 glass-dark rounded-2xl px-4 py-3 cursor-pointer group"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 3 }}
         whileHover={{ scale: 1.02 }}
         onClick={() => scrollTo("#galerie")}
       >
-        <div className="w-10 h-10 rounded-full bg-industrial-600 flex items-center justify-center group-hover:bg-glass-blue transition-colors">
+        <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center group-hover:bg-sky-400 transition-colors">
           <FiPlay className="text-white ml-0.5" size={16} />
         </div>
         <div className="text-left">
-          <p className="text-xs text-sand-200/70">Voir la galerie</p>
+          <p className="text-xs text-blue-200/70">Voir la galerie</p>
           <p className="text-sm font-medium text-white">Visite virtuelle</p>
         </div>
       </motion.div>

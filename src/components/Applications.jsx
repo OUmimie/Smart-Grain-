@@ -7,7 +7,7 @@ export default function Applications() {
   const [ref, isInView] = useInView();
 
   return (
-    <section id="applications" className="section-padding bg-sand-50">
+    <section id="applications" className="section-padding" style={{background: 'rgba(14,31,82,0.40)'}}>
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           tag="Applications"
@@ -33,13 +33,13 @@ export default function Applications() {
                   className={`absolute inset-0 bg-gradient-to-br ${app.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 />
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-industrial-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <Icon className="w-7 h-7 text-sand-100" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-sky-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-industrial-700 mb-3">
+                  <h3 className="font-display text-xl font-bold text-white mb-3">
                     {app.title}
                   </h3>
-                  <p className="text-industrial-400 leading-relaxed text-sm">
+                  <p className="text-blue-200/75 leading-relaxed text-sm">
                     {app.description}
                   </p>
                 </div>
