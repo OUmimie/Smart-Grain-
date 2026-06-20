@@ -45,7 +45,7 @@ export const processSteps = [
     id: 6,
     title: "Verre intelligent — Revêtement Auto-nettoyant",
     description:
-      "Pour obtenir un verre auto-nettoyant, une couche technologique spéciale est appliquée à la surface du verre. Cette couche est généralement composée de matériaux photocatalytiques comme le dioxyde de titane (TiO₂). Sous l'action des rayons du soleil ou d'une lampe UV, le TiO₂ active une réaction photocatalytique qui décompose les salissures organiques, détruit les bactéries et purifie l'air ambiant — offrant un verre haute performance, hygiénique et adapté aux environnements les plus exigeants.",
+      "Pour obtenir un verre auto-nettoyant, une couche technologique spéciale est appliquée à la surface du verre. Cette couche est généralement composée de matériaux photocatalytiques comme le dioxyde de titane (TiO₂). Sous l'action des rayons du soleil ou d'une lampe UV, le TiO₂ active une réaction photocatalytique qui décompose les salissures organiques et détruit les bactéries — offrant un verre haute performance, hygiénique et adapté aux environnements les plus exigeants.",
     image: images.process[5],
     alt: "Verre intelligent auto-nettoyant au TiO₂",
   },

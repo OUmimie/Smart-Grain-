@@ -63,11 +63,13 @@ export default function About() {
             </ul>
           </div>
           <div className="flex-1 w-full">
-            <img
-              src={images.about}
-              alt={`Complexe industriel ${company.name}`}
+            <video
+              src="/demot.mp4"
               className="rounded-2xl w-full h-64 lg:h-80 object-cover shadow-lg"
-              loading="lazy"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
           </div>
         </motion.div>
